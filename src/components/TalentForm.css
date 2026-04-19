@@ -152,7 +152,7 @@ textarea {
 }
 
 select option {
-  background-color: #2a0000; /* DARK instead of gray */
+  background-color: #2a0000;
   color: var(--white);
 } 
 
