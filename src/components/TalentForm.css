@@ -1,0 +1,158 @@
+:root {
+  --royal-red: #8b0000;
+  --deep-burgundy: #4a0000;
+  --gold: #d4af37;
+  --soft-gold: #f9e29c;
+  --white: #ffffff;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(135deg, var(--deep-burgundy), #220000);
+}
+
+/* PAGE */
+.talent-page-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--deep-burgundy), #220000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+/* FORM CARD */
+.form-container {
+  width: 100%;
+  max-width: 750px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* HEADER */
+.form-header {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.form-header h1 {
+  color: var(--gold);
+  font-size: 1.9rem;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.form-header p {
+  font-size: 0.75rem;
+  color: var(--soft-gold);
+  margin: 4px 0;
+}
+
+.gold-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 8px auto;
+  width: 70%;
+}
+
+/* FORM */
+.talent-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* GROUP */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* LABEL */
+label {
+  font-size: 0.7rem;
+  color: var(--soft-gold);
+  text-transform: uppercase;
+}
+
+.main-label {
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+/* GRID SYSTEM */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1.5fr;
+  gap: 8px;
+}
+
+/* INPUTS */
+input, select, textarea {
+  padding: 8px;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  border: 1px solid rgba(212,175,55,0.3);
+  background: rgba(0,0,0,0.3);
+  color: white;
+}
+
+/* FOCUS */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 6px rgba(212,175,55,0.3);
+}
+
+/* TEXTAREA SMALLER */
+textarea {
+  resize: none;
+}
+
+/* BUTTON */
+.submit-btn {
+  margin-top: 6px;
+  padding: 10px;
+  font-size: 0.9rem;
+  background: var(--gold);
+  color: var(--deep-burgundy);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.submit-btn:hover {
+  background: var(--soft-gold);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .talent-page-wrapper {
+    overflow-y: auto;
+  }
+}
+
+select option {
+  background-color: #2a0000; /* DARK instead of gray */
+  color: var(--white);
+} 
+
