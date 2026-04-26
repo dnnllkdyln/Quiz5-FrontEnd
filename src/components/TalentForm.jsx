@@ -18,23 +18,46 @@ const TalentForm = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const fullName = `${formData.firstName} ${formData.lastName}`;
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    const finalData = {
-      participantName: fullName,
-      age: formData.age,
-      address: formData.address,
-      email: formData.email,
-      category: formData.category,
-      description: formData.description
-    };
+  const fullName = `${formData.firstName} ${formData.lastName}`;
 
-    console.log('Form Submitted:', finalData);
+  const finalData = {
+    participantName: fullName,
+    age: formData.age,
+    address: formData.address,
+    email: formData.email,
+    category: formData.category,
+    description: formData.description
+  };
+
+  try {
+    const response = await fetch("/api/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(finalData)
+    });
+
+    const result = await response.json();
+
+    console.log("Server response:", result);
+
+    if (!response.ok) {
+      throw new Error(result.error || "Failed to submit");
+    }
+
+    alert("Form submitted successfully!");
 
     setFormData(initialFormState);
-  };
+
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Submission failed");
+  }
+};
 
   return (
     <div className="talent-page-wrapper">
