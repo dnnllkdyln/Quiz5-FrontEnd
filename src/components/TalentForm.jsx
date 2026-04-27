@@ -33,7 +33,7 @@ const TalentForm = () => {
   };
 
   try {
-    const response = await fetch("/api/submit", {
+    const response = await fetch("https://gleeful-horse-8f8c88.netlify.app/.netlify/functions/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -41,7 +41,13 @@ const TalentForm = () => {
       body: JSON.stringify(finalData)
     });
 
-    const result = await response.json();
+    let result;
+    
+    try {
+      result = await response.json();
+    } catch {
+      result = { message: "No JSON response" };
+    }
 
     console.log("Server response:", result);
 
