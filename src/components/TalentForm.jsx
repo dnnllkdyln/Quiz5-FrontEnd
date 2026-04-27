@@ -34,7 +34,7 @@ const TalentForm = () => {
 
   try {
     console.log("FETCH IS ABOUT TO RUN");
-    const response = await fetch("https://gleeful-horse-8f8c88.netlify.app/api/submit", {
+    const response = await fetch("https://magnificent-crisp-7127fb.netlify.app/api/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
